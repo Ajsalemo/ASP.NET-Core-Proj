@@ -22,6 +22,6 @@ steps:
     azureSubscription: 'Ansalemo(1)(4388fa06-bf66-4497-82c2-991ba75ecb97)'
     appType: 'webAppContainer'
     WebAppName: 'ansalemo-aspnetcore-ssh'
-    DockerNamespace: 'ansalemoContainerRegistry'
+    DockerNamespace: 'ansalemoContainerRegistry.azurecr.io'
     DockerRepository: 'asp'
     DockerImageTag: 'latest'
