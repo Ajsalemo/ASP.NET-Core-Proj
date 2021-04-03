@@ -40,11 +40,13 @@ stages:
           arguments: '--configuration $(buildConfiguration) --no-restore'
         displayName: 'dotnet publish $(buildConfiguration)'
         
-      - task: PublishBuildArtifacts@1
-        displayName: "Upload Artifacts"
+      - task: ArchiveFiles@2
         inputs:
-          pathtoPublish: '$(Build.ArtifactStagingDirectory)/**/*.zip' 
-          artifactName: 'aspnet-core-devops'
+          rootFolderOrFile: '$(Build.BinariesDirectory)'
+          includeRootFolder: true
+          archiveType: 'zip'
+          archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+          replaceExistingArchive: true
 
 - stage: Deploy
   displayName: Deploy 
