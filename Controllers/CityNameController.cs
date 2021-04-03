@@ -8,15 +8,18 @@ using Microsoft.Extensions.Logging;
 namespace ASP.NET_Core_Proj.Controllers
 {
     [ApiController]
-    // Map the request to the root path - ex. "/"
-    [Route("controller")]
+    [Route("[controller]")]
     public class CityNameController : ControllerBase
     {
-        [HttpGet]
-        public String CityName()
+        public string[] cityNames = new[]
         {
-            var placeholder = "Temporary placeholder";
-            return placeholder;
+            "New York City"
+        };
+
+        [HttpGet]
+        public string[] CityName()
+        {
+            return cityNames;
         }
     }
 }
