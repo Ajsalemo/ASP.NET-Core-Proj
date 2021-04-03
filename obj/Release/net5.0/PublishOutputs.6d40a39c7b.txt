@@ -1,0 +1,11 @@
+C:\Users\ajssa\OneDrive\Documents\Code\ASP.NET-Core-Proj\out\ASP.NET-Core-Proj.exe
+C:\Users\ajssa\OneDrive\Documents\Code\ASP.NET-Core-Proj\out\appsettings.Development.json
+C:\Users\ajssa\OneDrive\Documents\Code\ASP.NET-Core-Proj\out\appsettings.json
+C:\Users\ajssa\OneDrive\Documents\Code\ASP.NET-Core-Proj\out\ASP.NET-Core-Proj.dll
+C:\Users\ajssa\OneDrive\Documents\Code\ASP.NET-Core-Proj\out\ASP.NET-Core-Proj.deps.json
+C:\Users\ajssa\OneDrive\Documents\Code\ASP.NET-Core-Proj\out\ASP.NET-Core-Proj.runtimeconfig.json
+C:\Users\ajssa\OneDrive\Documents\Code\ASP.NET-Core-Proj\out\ASP.NET-Core-Proj.pdb
+C:\Users\ajssa\OneDrive\Documents\Code\ASP.NET-Core-Proj\out\Microsoft.OpenApi.dll
+C:\Users\ajssa\OneDrive\Documents\Code\ASP.NET-Core-Proj\out\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\ajssa\OneDrive\Documents\Code\ASP.NET-Core-Proj\out\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\ajssa\OneDrive\Documents\Code\ASP.NET-Core-Proj\out\Swashbuckle.AspNetCore.SwaggerUI.dll
