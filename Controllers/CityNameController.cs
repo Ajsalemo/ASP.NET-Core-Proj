@@ -11,15 +11,14 @@ namespace ASP.NET_Core_Proj.Controllers
     [Route("[controller]")]
     public class CityNameController : ControllerBase
     {
-        public string[] cityNames = new[]
+        private string[] cityNames = new[]
         {
-            "New York City"
+            "New York City", "London", "Tokyo", "Paris", "Hong Kong", "Los Angeles", "Sydney", "Rome"
         };
 
+        public string[] CityNames { get => cityNames; set => cityNames = value; }
+
         [HttpGet]
-        public string[] CityName()
-        {
-            return cityNames;
-        }
+        public string[] CityName() => CityNames;
     }
 }
