@@ -19,9 +19,8 @@ steps:
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
-    azureSubscription: 'Ansalemo(1)(4388fa06-bf66-4497-82c2-991ba75ecb97)'
-    appType: 'webAppContainer'
-    WebAppName: 'ansalemo-aspnetcore-ssh'
-    DockerNamespace: 'ansalemoContainerRegistry.azurecr.io'
-    DockerRepository: 'asp'
-    DockerImageTag: 'latest'
+    azureSubscription: 'Ansalemo(4388fa06-bf66-4497-82c2-991ba75ecb97)'
+    appType: 'webAppLinux'
+    WebAppName: 'aspnet-core-devops'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    RuntimeStack: 'DOTNETCORE|5.0'
