@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# Execute SSH
-/usr/sbin/sshd
+echo "Starting SSH ..."
+service ssh start
 
 # Run the application
 dotnet ASP.NET-Core-Proj.dll
