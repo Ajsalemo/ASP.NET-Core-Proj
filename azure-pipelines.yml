@@ -8,9 +8,9 @@ trigger:
 
 variables:
   buildConfiguration: 'Release'
-  vmImage: ubuntu-latest
+  vmImageName: ubuntu-latest
   environmentName: 'ASP.NET-Core-Proj'
-  
+
 stages:
 - stage: Build
   displayName: Build and push stage
