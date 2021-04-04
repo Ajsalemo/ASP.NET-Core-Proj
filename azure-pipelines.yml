@@ -48,18 +48,12 @@ stages:
           zipAfterPublish: true
         displayName: 'dotnet publish $(buildConfiguration)'
 
-      - task: ArchiveFiles@2
-        inputs:
-          rootFolderOrFile: '$(Build.BinariesDirectory)'
-          includeRootFolder: false
-          archiveType: 'zip'
-          archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-          replaceExistingArchive: true
-
       - task: PublishBuildArtifacts@1
         inputs:
-          PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)'
           ArtifactName: 'drop'
+          publishLocation: 'Container'
+        displayName: 'Upload artifacts'
     
 - stage: Deploy
   displayName: Deploy 
