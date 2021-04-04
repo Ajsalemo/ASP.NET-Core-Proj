@@ -38,6 +38,7 @@ stages:
           command: 'publish'
           projects: '**/ASP.NET-Core-Proj*.csproj'
           arguments: '--configuration $(buildConfiguration) --no-restore'
+          zipAfterPublish: true
         displayName: 'dotnet publish $(buildConfiguration)'
         
       - task: ArchiveFiles@2
@@ -54,21 +55,21 @@ stages:
           ArtifactName: 'drop'
           publishLocation: 'Container'
 
-- stage: Deploy
-  displayName: Deploy 
-  dependsOn: Build
-  condition: succeeded()
-  jobs:
-  - job: Deploy
-    displayName: Azure Web App Deploy
-    pool:
-      vmImage: $(vmImageName)
-    steps:
-      - task: AzureRmWebAppDeployment@4
-        inputs:
-          ConnectionType: 'AzureRM'
-          azureSubscription: 'Ansalemo(4388fa06-bf66-4497-82c2-991ba75ecb97)'
-          appType: 'webAppLinux'
-          WebAppName: 'aspnet-core-devops'
-          packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
-          RuntimeStack: 'DOTNETCORE|5.0'
+# - stage: Deploy
+#   displayName: Deploy 
+#   dependsOn: Build
+#   condition: succeeded()
+#   jobs:
+#   - job: Deploy
+#     displayName: Azure Web App Deploy
+#     pool:
+#       vmImage: $(vmImageName)
+#     steps:
+#       - task: AzureRmWebAppDeployment@4
+#         inputs:
+#           ConnectionType: 'AzureRM'
+#           azureSubscription: 'Ansalemo(4388fa06-bf66-4497-82c2-991ba75ecb97)'
+#           appType: 'webAppLinux'
+#           WebAppName: 'aspnet-core-devops'
+#           packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+#           RuntimeStack: 'DOTNETCORE|5.0'
