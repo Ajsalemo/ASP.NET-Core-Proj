@@ -72,6 +72,6 @@ stages:
           appType: 'webAppLinux'
           WebAppName: 'aspnet-core-devops'
           ResourceGroupName: 'ansalemo-rg'
-          packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
+          packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
           
           
