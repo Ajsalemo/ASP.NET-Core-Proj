@@ -21,27 +21,14 @@ stages:
       vmImage: $(vmImageName)
     steps:
     - task: UseDotNet@2
+      displayName: .NET 5 SDK
       inputs:
         packageType: 'sdk'
         version: '5.0.100'
         includePreviewVersions: true
-
-    - task: DotNetCoreCLI@2
-      displayName: Build
-      inputs:
-        command: build
-        projects: '**/*.csproj'
-        arguments: '--configuration $(buildConfiguration) /p:SourceRevisionId=$(Build.SourceVersion)' 
-
-    - task: DotNetCoreCLI@2
-      inputs:
-        command: publish
-        publishWebProjects: True
-        arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
-        zipAfterPublish: True
-
-     # Replace appSettings.json variables with pipeline environment variables
+    # Replace appSettings.json variables with pipeline environment variables
     - task: replacetokens@3
+      displayName: Replace Tokens
       inputs:
         rootDirectory: '$(System.DefaultWorkingDirectory)/'
         targetFiles: '**/appsettings.json'
@@ -54,7 +41,23 @@ stages:
         useLegacyPattern: false
         enableTelemetry: false
 
+    - task: DotNetCoreCLI@2
+      displayName: dotnet Build
+      inputs:
+        command: build
+        projects: '**/*.csproj'
+        arguments: '--configuration $(buildConfiguration) /p:SourceRevisionId=$(Build.SourceVersion)' 
+
+    - task: DotNetCoreCLI@2
+      displayName: dotnet Publish
+      inputs:
+        command: publish
+        publishWebProjects: True
+        arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+        zipAfterPublish: True
+
     - task: PublishBuildArtifacts@1
+      displayName: Publish Artifacts
       inputs:
         pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
         artifactName: 'drop'
