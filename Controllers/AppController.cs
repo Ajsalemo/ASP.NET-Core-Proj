@@ -25,7 +25,7 @@ namespace ASP.NET_Core_Proj.Controllers
         public String Index()
         {
             var buildId = _configuration["CodeVersion:Number"];
-            var message = "ASP.NET-Core-Proj " + "| Runtime: " + runtime + "| Build Version: " + buildId;
+            var message = "ASP.NET-Core-Proj " + "| Runtime: " + runtime + " | Build Version: " + buildId;
             return message;
         }
     }

@@ -44,7 +44,7 @@ stages:
     - task: replacetokens@3
       inputs:
         rootDirectory: '$(System.DefaultWorkingDirectory)/'
-        targetFiles: '**/appSettings.json'
+        targetFiles: '**/appsettings.json'
         encoding: 'auto'
         writeBOM: true
         actionOnMissing: 'warn'
