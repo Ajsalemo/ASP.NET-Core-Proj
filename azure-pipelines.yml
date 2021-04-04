@@ -45,23 +45,22 @@ stages:
         pathtoPublish: '$(Build.ArtifactStagingDirectory)' 
         artifactName: 'drop'
     
-# - stage: Deploy
-#   displayName: Deploy 
-#   dependsOn: Build
-#   condition: succeeded()
-#   jobs:
-#   - job: Deploy
-#     displayName: Azure Web App Deploy
-#     pool:
-#       vmImage: $(vmImageName)
-#     steps:
-#       - task: AzureRmWebAppDeployment@4
-#         inputs:
-#           ConnectionType: 'AzureRM'
-#           azureSubscription: 'Ansalemo(4388fa06-bf66-4497-82c2-991ba75ecb97)'
-#           appType: 'webAppLinux'
-#           WebAppName: 'aspnet-core-devops'
-#           ResourceGroupName: 'ansalemo-rg'
-#           packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+- stage: Deploy
+  displayName: Deploy 
+  dependsOn: Build
+  condition: succeeded()
+  jobs:
+  - job: Deploy
+    displayName: Azure Web App Deploy
+    pool:
+      vmImage: $(vmImageName)
+    steps:
+      - task: AzureRmWebAppDeployment@4
+        inputs:
+          ConnectionType: 'AzureRM'
+          azureSubscription: 'Ansalemo(4388fa06-bf66-4497-82c2-991ba75ecb97)'
+          appType: 'webAppLinux'
+          WebAppName: 'aspnet-core-devops'
+          packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
           
           
