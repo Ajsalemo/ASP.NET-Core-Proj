@@ -193,19 +193,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ajssa\\.nuget\\packages\\": {}
+    "C:\\Users\\ansalemo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ajssa\\OneDrive\\Documents\\Code\\ASP.NET-Core-Proj\\ASP.NET-Core-Proj.csproj",
+      "projectUniqueName": "C:\\Users\\ansalemo\\OneDrive - Microsoft\\Documents\\Code\\ASP.NET-Core-Proj\\ASP.NET-Core-Proj.csproj",
       "projectName": "ASP.NET-Core-Proj",
-      "projectPath": "C:\\Users\\ajssa\\OneDrive\\Documents\\Code\\ASP.NET-Core-Proj\\ASP.NET-Core-Proj.csproj",
-      "packagesPath": "C:\\Users\\ajssa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ajssa\\OneDrive\\Documents\\Code\\ASP.NET-Core-Proj\\obj\\",
+      "projectPath": "C:\\Users\\ansalemo\\OneDrive - Microsoft\\Documents\\Code\\ASP.NET-Core-Proj\\ASP.NET-Core-Proj.csproj",
+      "packagesPath": "C:\\Users\\ansalemo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ansalemo\\OneDrive - Microsoft\\Documents\\Code\\ASP.NET-Core-Proj\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ajssa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ansalemo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -254,7 +254,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
