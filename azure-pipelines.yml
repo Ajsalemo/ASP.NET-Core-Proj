@@ -31,7 +31,7 @@ stages:
       inputs:
         command: build
         projects: '**/*.csproj'
-        arguments: '--configuration $(buildConfiguration)' 
+        arguments: '--configuration $(buildConfiguration) /p:SourceRevisionId=$(Build.SourceVersion)' 
 
     - task: DotNetCoreCLI@2
       inputs:
@@ -39,6 +39,20 @@ stages:
         publishWebProjects: True
         arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
         zipAfterPublish: True
+
+     # Replace appSettings.json variables with pipeline environment variables
+    - task: replacetokens@3
+      inputs:
+        rootDirectory: '$(System.DefaultWorkingDirectory)/'
+        targetFiles: '**/appSettings.json'
+        encoding: 'auto'
+        writeBOM: true
+        actionOnMissing: 'warn'
+        keepToken: false
+        tokenPrefix: '#{'
+        tokenSuffix: '}#'
+        useLegacyPattern: false
+        enableTelemetry: false
 
     - task: PublishBuildArtifacts@1
       inputs:
