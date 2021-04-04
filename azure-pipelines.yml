@@ -47,6 +47,14 @@ stages:
           arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
           zipAfterPublish: true
         displayName: 'dotnet publish $(buildConfiguration)'
+
+      - task: ArchiveFiles@2
+        inputs:
+          rootFolderOrFile: '$(Build.BinariesDirectory)'
+          includeRootFolder: true
+          archiveType: 'zip'
+          archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+          replaceExistingArchive: true
         
       - task: PublishBuildArtifacts@1
         inputs:
@@ -63,10 +71,11 @@ stages:
     pool:
       vmImage: $(vmImageName)
     steps:
-      - task: AzureWebApp@1
+      - task: AzureRmWebAppDeployment@4
         inputs:
+          ConnectionType: 'AzureRM'
           azureSubscription: 'Ansalemo(4388fa06-bf66-4497-82c2-991ba75ecb97)'
           appType: 'webAppLinux'
-          appName: 'aspnet-core-devops'
-          package: '$(Build.ArtifactStagingDirectory)/**/*.zip'
-          runtimeStack: 'DOTNETCORE|5.0'
+          WebAppName: 'aspnet-core-devops'
+          ResourceGroupName: 'ansalemo-rg'
+          packageForLinux: '$(Build.ArtifactStagingDirectory)/*.zip'
