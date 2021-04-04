@@ -68,5 +68,5 @@ stages:
           azureSubscription: 'Ansalemo(4388fa06-bf66-4497-82c2-991ba75ecb97)'
           appType: 'webAppLinux'
           appName: 'aspnet-core-devops'
-          package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+          package: '$(Build.ArtifactStagingDirectory)/**/*.zip'
           runtimeStack: 'DOTNETCORE|5.0'
