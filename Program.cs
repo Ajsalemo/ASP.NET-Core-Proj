@@ -21,6 +21,12 @@ namespace ASP.NET_Core_Proj
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                    // Increasing header limit size to 64KB for testing
+                    webBuilder.UseKestrel(options =>
+                        {
+                            options.Limits.MaxRequestHeadersTotalSize = 32000 * 2;
+                        }
+                    );
                 });
     }
 }

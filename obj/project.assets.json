@@ -198,11 +198,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ansalemo\\OneDrive - Microsoft\\Documents\\Code\\ASP.NET-Core-Proj\\ASP.NET-Core-Proj.csproj",
+      "projectUniqueName": "C:\\Users\\ansalemo\\OneDrive - Microsoft\\Documents\\Code\\Github\\ASP.NET-Core-Proj\\ASP.NET-Core-Proj.csproj",
       "projectName": "ASP.NET-Core-Proj",
-      "projectPath": "C:\\Users\\ansalemo\\OneDrive - Microsoft\\Documents\\Code\\ASP.NET-Core-Proj\\ASP.NET-Core-Proj.csproj",
+      "projectPath": "C:\\Users\\ansalemo\\OneDrive - Microsoft\\Documents\\Code\\Github\\ASP.NET-Core-Proj\\ASP.NET-Core-Proj.csproj",
       "packagesPath": "C:\\Users\\ansalemo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ansalemo\\OneDrive - Microsoft\\Documents\\Code\\ASP.NET-Core-Proj\\obj\\",
+      "outputPath": "C:\\Users\\ansalemo\\OneDrive - Microsoft\\Documents\\Code\\Github\\ASP.NET-Core-Proj\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ansalemo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -254,7 +254,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }
